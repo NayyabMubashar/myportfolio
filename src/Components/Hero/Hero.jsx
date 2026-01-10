@@ -4,6 +4,7 @@ import pics from '../../assets/pics.jpg'
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Hero = () => {
+  
   return (
     <div id='home' className='hero'>
         <img src={pics} alt='pic'/>
