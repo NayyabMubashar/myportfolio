@@ -7,7 +7,7 @@ const Hero = () => {
   
   return (
     <div id='home' className='hero'>
-        <img src={pics} alt='pic'/>
+      
         <h1> <span>I'm Nayab Mubashar,</span>  Frontend Developer</h1>
         <p>Building beautiful, fast, and intuitive web experiences.
 I love designing UI that feels smooth, modern, and enjoyable to use.</p>

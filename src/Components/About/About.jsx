@@ -10,9 +10,7 @@ const About = () => {
         
         </div>
         <div className="about-section">
-            <div className="about-left">
-                <img src={pics} alt='about'/>
-            </div>
+            
             <div className="about-right">
                 <div className="about-para">
                     <p>I’m Nayab, an entry-level Frontend Developer with hands-on experience in creating interactive UIs.
