@@ -138,3 +138,49 @@ gap: 30px;
         padding: 16px 40px ;
     }
 }
+@media (max-width: 500px) {
+  .contact {
+    gap: 30px;
+    margin: 20px;
+    align-items: center;
+  }
+
+  .contact-title h1 {
+    font-size: 37px;
+    text-align: center;
+  }
+
+  .contact-left h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .contact-left p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+
+  .contact-right label {
+    font-size: 20px;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .contact-submit {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+

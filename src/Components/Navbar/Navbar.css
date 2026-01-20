@@ -106,3 +106,9 @@
 
     }
 }
+@media(max-width:500px){
+    .navbar{
+        margin: 30px 10px;
+    }
+ 
+}

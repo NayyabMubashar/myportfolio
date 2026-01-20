@@ -76,3 +76,34 @@ transition: 0.6s;
         cursor: pointer;
     }
 }
+@media(max-width:500px){
+    .mywork{
+        gap: 30px;
+        margin: 20px 60px;
+        align-items: center;
+    }
+    .mywork-title h1{
+    
+        font-size: 35px;
+        font-weight: 600;
+
+    }
+  @media (max-width: 500px) {
+  .mywork-container {
+    grid-template-columns: 1fr;
+    justify-items: center;   
+  }
+
+  .mywork-container img {
+    width: 100%;              
+    max-width: 900px;        
+    height: auto;
+  }
+}
+    .mywork-showmore{
+        padding: 10px 20px;
+        font-size: 15px;
+        margin: 10px auto;
+        cursor: pointer;
+    }
+}

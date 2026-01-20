@@ -56,12 +56,7 @@
 }
 
 @media(max-width:768px){
-    .hero img{
-        margin-bottom: 20px;
-        width: 250px;
-        height: 250px;
-
-    }
+   
     .hero h1{
        margin-top: 20px;
        width: 90%; 
@@ -86,6 +81,30 @@
 .hero-resume{
     padding: 20px 50px;
     border-radius: 40px;
+}
+
+}
+@media(max-width:500px){
+      .hero h1{
+       margin-top: 10px;
+       width: 90%; 
+       font-size: 40px;
+    }.hero p{
+         width: 70%;
+        line-height: 29px;
+        margin-top: 2px;
+    }   .hero-action{
+        
+        gap: 7px;
+        font-size: 14px;
+        font-weight: 700;}
+        .hero-connect{
+    padding: 19px 28px;
+    
+}
+.hero-resume{
+    padding: 17px 36px;
+    
 }
 
 }

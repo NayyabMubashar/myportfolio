@@ -139,3 +139,38 @@
 
 
 }
+
+@media(max-width:500px){
+    .about{
+        gap: 20px;
+        margin: 10px 50px;
+        align-items: center;
+    }
+     .about-title h1{
+        font-size: 40px ;
+        padding: 0;
+    }.about-skills{
+     gap: 10px;
+    }
+     .about-skill{
+        gap: 2px;
+        align-items: center;
+
+    }
+    .about-skill p{
+     font-size: 17px;
+    }
+      .about-achievment{
+        gap: 12px;
+        width: 40%;
+      
+    }
+    .about-achievment h1{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .about-achievment p{
+        text-align: center;
+        font-size: 12px;
+    }
+}
