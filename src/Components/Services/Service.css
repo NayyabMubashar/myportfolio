@@ -1,115 +1,383 @@
-.services{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:80px;
-    margin: 70px 170px;
+.services {
+    position: relative;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 120px 30px;
+
+    overflow: hidden;
+
+    color: white;
 }
-.services-title h1{
-    padding: 0px 30px;
-    font-size: 70px;
+
+/* ================= TITLE ================= */
+
+.services-title {
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+.services-title>span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #1adf73;
+
+    font-size: 13px;
+
     font-weight: 600;
+
+    letter-spacing: 3px;
 }
-.service-format{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap:20px;
-    padding: 60px;
-    border-radius: 10px;
-    border: 2px solid white;
-    transition: 0.4s;
-    cursor: pointer;
+
+.services-title h1 {
+    margin: 0;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    font-weight: 750;
+
+    letter-spacing: -2px;
 }
-.service-format h3{
-    font-size: 28px;
-    font-weight: 600;
-}
-.service-format h2{
-    font-size: 38px;
-    font-weight: 800;
-    background: linear-gradient(267deg,#3725da 0.36%,#1adf73);
-    background-clip: text;
+
+.services-title h1 strong {
+    font-weight: 750;
+
+    background: linear-gradient(90deg,
+            #3725da,
+            #1adf73);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.service-format p{
-    color:aliceblue;
-    font-size: 24px;
-    line-height: 40px;
-    max-width: 300px;
+
+.services-title p {
+    max-width: 600px;
+
+    margin: 18px auto 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 16px;
+
+    line-height: 1.7;
 }
-.services-container{
+
+.services-line {
+    width: 70px;
+    height: 4px;
+
+    margin: 20px auto 0;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg,
+            #3725da,
+            #1adf73);
+}
+
+/* ================= CONTAINER ================= */
+
+.services-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
 }
-.service-format:hover{
-    border:2px solid #1adf73;
-    background-image:linear-gradient(267deg,#970f4f 0.36%,#a83b7e) ;
-    transform: scale(1.05);
-    transition: 0.4s;
 
-} 
+/* ================= CARD ================= */
 
+.service-format {
+    position: relative;
 
-@media(max-width:768px) {
-    .services{
-        align-items: start;
-        gap: 70px;
-        margin: 20px 70px;
-    }
-    .services-title h1{
-        padding: 0;
-        font-size: 50px;
-    }
-    .service-format{
-        gap: 20px;
-        padding: 32px;
+    min-height: 310px;
 
-    }
-    .service-format h2{
-        font-size: 29px;
-    }
-     .service-format p{
-        font-size: 18px;
-        line-height: 32px;
-        max-width: 300px;
+    padding: 32px;
 
-    }.services-container{
-        grid-template-columns:  1fr 1fr;
-        gap: 30px;
-    }
+    overflow: hidden;
 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+
+    animation: serviceAppear 0.7s ease both;
 }
-@media(max-width:500px) {
-    .services{
-        align-items: center;
-        gap: 30px;
-        margin: 10px 50px;
-    }
-    .services-title h1{
-        padding: 0;
-        font-size: 34px;
-    }
-    .service-format{
-        gap: 2px;
-        padding: 20px;
 
+.service-format:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.service-format:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.service-format:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Card Hover */
+
+.service-format:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(26, 223, 115, 0.35);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= TOP ================= */
+
+.service-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.service-number {
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+/* ================= ICON ================= */
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: white;
+
+    font-size: 23px;
+
+    background: linear-gradient(135deg,
+            #3725da,
+            #1adf73);
+
+    box-shadow:
+        0 10px 25px rgba(55, 37, 218, 0.25);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.service-format:hover .service-icon {
+    transform: rotate(-8deg) scale(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(26, 223, 115, 0.25);
+}
+
+/* ================= CONTENT ================= */
+
+.service-format h2 {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 15px;
+
+    font-size: 25px;
+
+    font-weight: 650;
+}
+
+.service-format>p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 480px;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+/* ================= READ MORE ================= */
+
+.service-readmore {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 25px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.service-readmore span {
+    transition: color 0.3s ease;
+}
+
+.readmore-icon {
+    color: #1adf73;
+
+    transition: transform 0.3s ease;
+}
+
+.service-format:hover .readmore-icon {
+    transform: translateX(6px);
+}
+
+.service-format:hover .service-readmore span {
+    color: #1adf73;
+}
+
+/* ================= BACKGROUND NUMBER ================= */
+
+.service-bg-number {
+    position: absolute;
+
+    right: -15px;
+    bottom: -45px;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    font-size: 180px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.service-format:hover .service-bg-number {
+    color: rgba(26, 223, 115, 0.045);
+
+    transform: translateY(-10px);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes serviceAppear {
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
     }
-    .service-format h2{
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 850px) {
+
+    .services {
+        padding: 90px 25px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-format {
+        min-height: 280px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .services {
+        padding: 75px 18px;
+    }
+
+    .services-title {
+        margin-bottom: 45px;
+    }
+
+    .services-title h1 {
+        font-size: 42px;
+    }
+
+    .services-title p {
+        font-size: 14px;
+    }
+
+    .services-container {
+        gap: 16px;
+    }
+
+    .service-format {
+        min-height: 275px;
+
+        padding: 25px;
+
+        border-radius: 20px;
+    }
+
+    .service-format h2 {
         font-size: 22px;
     }
-     .service-format p{
-        font-size: 18px;
-        line-height: 22px;
-        max-width: 200px;
-        margin-bottom: 13px;
 
-    }.services-container{
-        grid-template-columns:  1fr 1fr;
-        gap: 30px;
+    .service-format>p {
+        font-size: 13px;
+    }
+
+    .service-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 20px;
+    }
+
+    .service-bg-number {
+        font-size: 130px;
     }
 }
+

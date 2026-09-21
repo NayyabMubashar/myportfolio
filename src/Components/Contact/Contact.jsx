@@ -1,79 +1,195 @@
-import React from 'react'
-import './Contact.css'
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './Contact.css';
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+} from 'react-icons/fa';
+
 const Contact = () => {
-    const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setResult('Sending...');
+
     const formData = new FormData(event.target);
-    formData.append("access_key", "f07d4a0e-6d6d-4ae5-adb8-39175515c92b");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    formData.append(
+      'access_key',
+      'f07d4a0e-6d6d-4ae5-adb8-39175515c92b'
+    );
 
-    const data = await response.json();
-    console.log(data);
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      setResult("Error");
+    try {
+      const response = await fetch(
+        'https://api.web3forms.com/submit',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult('Message sent successfully! ✓');
+        event.target.reset();
+      } else {
+        setResult('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      setResult('Something went wrong. Please try again.');
     }
   };
 
-
-
   return (
-    <div id='contact' className='contact'>
-        <div className="contact-title">
-            <h1>Get in touch</h1>
-        </div>
+    <section id="contact" className="contact">
 
-        <div className="contact-section">
-            <div className="contact-left">
-                <h1>Let's Talk</h1>
-                <p>Let’s connect and bring your ideas to life.
-I’m always open to discussing new projects, collaborations, or job opportunities.
-Whether you need a frontend developer or just want to say hello, feel free to reach out.
-I’ll get back to you as soon as possible.
-Let’s build something amazing together.</p>
-            <div className="contact-details">
+      {/* Heading */}
+      <div className="contact-title">
+        <span>GET IN TOUCH</span>
+
+        <h1>
+          Let's <strong>Talk</strong>
+        </h1>
+
+        <p>
+          Have a project in mind or want to discuss an opportunity?
+          I'd love to hear from you.
+        </p>
+
+        <div className="contact-line"></div>
+      </div>
+
+      {/* Contact Content */}
+      <div className="contact-section">
+
+        {/* Left Side */}
+        <div className="contact-left">
+
+          <div className="contact-intro">
+            <span className="contact-small-title">
+              HAVE AN IDEA?
+            </span>
+
+            <h2>
+              Let's build something
+              <span> amazing together.</span>
+            </h2>
+
+            <p>
+              I'm always open to discussing new projects, creative ideas,
+              collaborations, or job opportunities. Feel free to reach out
+              and I'll get back to you as soon as possible.
+            </p>
+          </div>
+
+          {/* Contact Details */}
+          <div className="contact-details">
+
             <div className="contact-detail">
-             <i class="ri-message-3-line"></i>
-<p>nayabmubashar0@gmail.com</p>
-            </div>
-               <div className="contact-detail">
-                <i class="ri-phone-line"></i>
-<p>03474927950</p>
-            </div>
-               <div className="contact-detail">
-                <i class="ri-map-pin-line"></i>
-<p>CA ,United state</p>
+              <div className="contact-icon">
+                <FaEnvelope />
+              </div>
+
+              <div>
+                <span>Email</span>
+                <p>nayabmubashar0@gmail.com</p>
+              </div>
             </div>
 
-            </div>
-            
+            <div className="contact-detail">
+              <div className="contact-icon">
+                <FaPhoneAlt />
+              </div>
+
+              <div>
+                <span>Phone</span>
+                <p>03474927950</p>
+              </div>
             </div>
 
-            <form onSubmit={onSubmit} className='contact-right'>
-            <label htmlFor=''>Your Name</label>
-      <input type='text' placeholder='Enter your name ' name='name'/>
-        <label htmlFor=''>Your Email</label>
-        <input type='email' placeholder='Enter your email'/>
-         <label htmlFor=''>Write your message here</label>
-         <textarea name='message' rows='8' placeholder='Enter your message'></textarea>
-  <button type='submit' className='contact-submit'>Submit Now</button>
-        <span>{result}</span>
+            <div className="contact-detail">
+              <div className="contact-icon">
+                <FaMapMarkerAlt />
+              </div>
 
-  </form>
+              <div>
+                <span>Location</span>
+                <p>CA, United States</p>
+              </div>
+            </div>
+
+          </div>
         </div>
-      
-    </div>
-  )
-}
 
-export default Contact
+        {/* Right Side Form */}
+        <form
+          onSubmit={onSubmit}
+          className="contact-right"
+        >
+
+          <div className="form-heading">
+            <h2>Send me a message</h2>
+            <p>
+              Fill out the form below and I'll get back to you shortly.
+            </p>
+          </div>
+
+          <div className="form-group">
+            <label>Your Name</label>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Your Email</label>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Your Message</label>
+
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            className="contact-submit"
+          >
+            <span>Send Message</span>
+            <FaPaperPlane />
+          </button>
+
+          {result && (
+            <p className="form-result">
+              {result}
+            </p>
+          )}
+
+        </form>
+
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

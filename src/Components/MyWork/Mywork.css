@@ -1,109 +1,378 @@
-.mywork{
+.mywork {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 30px;
+    box-sizing: border-box;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.mywork-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.mywork-title>span {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #1adf73;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.mywork-title h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.mywork-title h1 strong {
+    background: linear-gradient(90deg, #3725da, #1adf73);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mywork-title p {
+    max-width: 600px;
+    margin: 18px auto 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.work-line {
+    width: 70px;
+    height: 3px;
+    margin: 25px auto 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #3725da, #1adf73);
+}
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.mywork-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.work-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    transition: all 0.4s ease;
+    animation: workCard 0.7s ease both;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(26, 223, 115, 0.35);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(26, 223, 115, 0.08);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.work-image {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    background: #11162a;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.08);
+    filter: brightness(0.65);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.work-overlay {
+    position: absolute;
+    inset: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+    gap: 12px;
 
+    background: linear-gradient(135deg,
+            rgba(55, 37, 218, 0.7),
+            rgba(26, 223, 115, 0.45));
+
+    opacity: 0;
+    transition: all 0.4s ease;
 }
-.mywork-title h1{
-    padding: 0px 30px;
-    font-size: 80px;
+
+.work-card:hover .work-overlay {
+    opacity: 1;
+}
+
+.work-view {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    color: white;
+    font-size: 17px;
+
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(10px);
+
+    transform: translateY(15px) scale(0.8);
+    transition: all 0.4s ease;
+}
+
+.work-card:hover .work-view {
+    transform: translateY(0) scale(1);
+}
+
+.work-overlay span {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    transform: translateY(15px);
+    transition: all 0.4s ease 0.05s;
+}
+
+.work-card:hover .work-overlay span {
+    transform: translateY(0);
+}
+
+/* =========================
+   PROJECT NUMBER
+========================= */
+
+.work-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 13px;
+
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+
+    background: rgba(10, 10, 30, 0.55);
+    backdrop-filter: blur(10px);
+}
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.work-info {
+    min-height: 95px;
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    box-sizing: border-box;
+}
+
+.work-label {
+    color: #1adf73;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.work-info h2 {
+    margin: 6px 0 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.work-arrow {
+    min-width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    color: white;
+    font-size: 13px;
+
+    background: linear-gradient(135deg, #3725da, #1adf73);
+
+    transition: all 0.35s ease;
+}
+
+.work-card:hover .work-arrow {
+    transform: rotate(-45deg);
+}
+
+/* =========================
+   SHOW MORE
+========================= */
+
+.mywork-showmore {
+    margin: 50px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 25px;
+
+    color: white;
+    font-size: 14px;
     font-weight: 600;
 
-}
-.mywork-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:40px;
-}
-.mywork-container img{
-    box-sizing: border-box;
-    width: 419px;
-    height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.35s ease;
+}
 
+.mywork-showmore svg {
+    transition: transform 0.3s ease;
 }
-.mywork-container img:hover{
-    transform: scale(1.10);
-    border :4px solid rebeccapurple;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-.mywork-showmore{
-display: flex;
-padding: 20px;
-gap: 15px;
-border-radius: 50px;
-border:2px solid white;
-font-size:22px ;
-font-weight: 500;
-margin-bottom: 80px;
-transition: 0.6s;
-cursor: pointer;
-}
-.mywork-showmore:hover{
-gap: 30px;
-transition: 0.6s;
-}
-@media(max-width:768px){
-    .mywork{
-        gap: 50px;
-        margin: 50px 70px;
-        align-items: start;
-    }
-    .mywork-title h1{
-        padding: 0;
-        font-size: 50px;
-        font-weight: 600;
 
+.mywork-showmore:hover {
+    border-color: rgba(26, 223, 115, 0.4);
+    background: linear-gradient(90deg, #3725da, #1adf73);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(26, 223, 115, 0.15);
+}
+
+.mywork-showmore:hover svg {
+    transform: translateX(5px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes workCard {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    .mywork-container{
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        margin: 10px -20px;
-    }
-    .mywork-container img{
-        width: 80%;
-        height: 70%;
-    }
-    .mywork-showmore{
-        padding: 20px 40px;
-        font-size: 18px;
-        margin: 20px auto;
-        cursor: pointer;
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-@media(max-width:500px){
-    .mywork{
-        gap: 30px;
-        margin: 20px 60px;
-        align-items: center;
-    }
-    .mywork-title h1{
-    
-        font-size: 35px;
-        font-weight: 600;
 
-    }
-  @media (max-width: 500px) {
-  .mywork-container {
-    grid-template-columns: 1fr;
-    justify-items: center;   
-  }
+/* =========================
+   TABLET
+========================= */
 
-  .mywork-container img {
-    width: 100%;              
-    max-width: 900px;        
-    height: auto;
-  }
+@media (max-width: 850px) {
+    .mywork {
+        padding: 90px 25px;
+    }
+
+    .mywork-title h1 {
+        font-size: 40px;
+    }
+
+    .mywork-container {
+        grid-template-columns: 1fr;
+    }
+
+    .work-image {
+        height: 380px;
+    }
 }
-    .mywork-showmore{
-        padding: 10px 20px;
-        font-size: 15px;
-        margin: 10px auto;
-        cursor: pointer;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .mywork {
+        padding: 75px 18px;
+    }
+
+    .mywork-title {
+        margin-bottom: 40px;
+    }
+
+    .mywork-title h1 {
+        font-size: 32px;
+    }
+
+    .mywork-title p {
+        font-size: 14px;
+    }
+
+    .mywork-container {
+        gap: 20px;
+    }
+
+    .work-image {
+        height: 270px;
+    }
+
+    .work-info {
+        padding: 17px;
+    }
+
+    .work-info h2 {
+        font-size: 17px;
+    }
+
+    .work-arrow {
+        min-width: 38px;
+        height: 38px;
     }
 }
