@@ -139,10 +139,11 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <label>Your Name</label>
+            <label htmlFor="contact-name">Your Name</label>
 
             <input
               type="text"
+              id="contact-name"
               name="name"
               placeholder="Enter your name"
               required
@@ -150,10 +151,11 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <label>Your Email</label>
+            <label htmlFor="contact-email">Your Email</label>
 
             <input
               type="email"
+              id="contact-email"
               name="email"
               placeholder="Enter your email"
               required
@@ -161,10 +163,11 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <label>Your Message</label>
+            <label htmlFor="contact-message">Your Message</label>
 
             <textarea
               name="message"
+              id="contact-message"
               rows="6"
               placeholder="Write your message here..."
               required

@@ -29,19 +29,28 @@ const Navbar = () => {
       </h2>
 
       {/* Mobile Open Icon */}
-      <i
-        className="fa-solid fa-bars open-icon"
+      <button
+        type="button"
+        className="open-icon"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
         onClick={openMenu}
-      ></i>
+      >
+        <i className="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
 
       {/* Navigation */}
-      <ul ref={menuRef} className="nav-menu">
+      <ul ref={menuRef} id="primary-navigation" className="nav-menu">
 
         {/* Mobile Close Icon */}
-        <i
-          className="fa-solid fa-xmark close-icon"
+        <button
+          type="button"
+          className="close-icon"
+          aria-label="Close navigation menu"
           onClick={closeMenu}
-        ></i>
+        >
+          <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
 
         <li className={menu === 'home' ? 'active' : ''}>
           <AnchorLink

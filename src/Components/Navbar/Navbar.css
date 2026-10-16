@@ -162,6 +162,14 @@
     display: none;
 }
 
+.open-icon,
+.close-icon {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+}
+
 /* ================= ANIMATIONS ================= */
 
 @keyframes navbarFade {
