@@ -5,6 +5,8 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
   FaPaperPlane,
+  FaGithub,
+  FaLinkedinIn,
 } from 'react-icons/fa';
 
 const Contact = () => {
@@ -96,7 +98,7 @@ const Contact = () => {
 
               <div>
                 <span>Email</span>
-                <p>nayabmubashar0@gmail.com</p>
+                <a className="contact-value-link" href="mailto:nayabmubashar0@gmail.com">nayabmubashar0@gmail.com</a>
               </div>
             </div>
 
@@ -121,6 +123,16 @@ const Contact = () => {
                 <p>CA, United States</p>
               </div>
             </div>
+
+            <a className="contact-detail contact-social-link" href="https://github.com/NayyabMubashar" target="_blank" rel="noreferrer" aria-label="Visit Nayab Mubashar on GitHub">
+              <div className="contact-icon" aria-hidden="true"><FaGithub /></div>
+              <div><span>GitHub</span><p>NayyabMubashar</p></div>
+            </a>
+
+            <a className="contact-detail contact-social-link" href="https://www.linkedin.com/in/nayab-mubashar-67882925b/" target="_blank" rel="noreferrer" aria-label="Visit Nayab Mubashar on LinkedIn">
+              <div className="contact-icon" aria-hidden="true"><FaLinkedinIn /></div>
+              <div><span>LinkedIn</span><p>Nayab Mubashar</p></div>
+            </a>
 
           </div>
         </div>

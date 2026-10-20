@@ -10,7 +10,7 @@ const Mywork = () => {
 
       {/* Section Heading */}
       <div className="mywork-title">
-        <span>MY PORTFOLIO</span>
+        <span>SELECTED PROJECTS</span>
 
         <h1>
           My Latest <strong>Work</strong>
@@ -33,7 +33,7 @@ const Mywork = () => {
             <div className="work-image">
               <img
                 src={work.w_img}
-                alt={`Project ${index + 1}`}
+                alt={work.w_name}
               />
 
               {/* Hover Overlay */}
@@ -42,7 +42,7 @@ const Mywork = () => {
                   <FaExternalLinkAlt />
                 </div>
 
-                <span>View Project</span>
+                <span>Project Preview</span>
               </div>
 
               {/* Number */}
@@ -54,13 +54,10 @@ const Mywork = () => {
             {/* Project Info */}
             <div className="work-info">
               <div>
-                <span className="work-label">
-                  PROJECT 0{index + 1}
-                </span>
+                <span className="work-label">{work.w_category}</span>
 
-                <h2>
-                  {work.w_name || `Creative Project ${index + 1}`}
-                </h2>
+                <h2>{work.w_name}</h2>
+                <p className="work-description">{work.w_desc}</p>
               </div>
 
               <div className="work-arrow">

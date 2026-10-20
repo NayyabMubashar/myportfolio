@@ -309,20 +309,10 @@
     color: #61dafb;
 }
 
-/* Next.js */
-.next-icon {
-    color: white;
-}
-
-/* TypeScript */
-.typescript-icon {
-    color: #3178c6;
-}
-
-/* Tailwind */
-.tailwind-icon {
-    color: #38bdf8;
-}
+/* Full stack technologies */
+.node-icon { color: #55d99b; }
+.express-icon { color: #f5f6ff; }
+.postgres-icon { color: #69b7ff; }
 
 /* ================= CODE CARD ================= */
 

@@ -3,7 +3,7 @@ import React from 'react';
 import './Hero.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { FaReact } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiExpress, SiNodedotjs, SiPostgresql } from 'react-icons/si';
 
 const Hero = () => {
   return (
@@ -23,34 +23,37 @@ const Hero = () => {
       <h1>
         I'm <span>Nayab Mubashar</span>
         <br />
-        Frontend Developer
+        Full Stack Developer
       </h1>
 
       {/* Description */}
       <p>
-        I build beautiful, fast, and intuitive web experiences.
+        I build modern web applications from responsive interfaces to reliable backends.
         <br className="desktop-break" />
-        I love creating modern interfaces that feel smooth,
-        clean, and enjoyable to use.
+        I enjoy bringing ideas to life with APIs, databases, and thoughtful user experiences.
       </p>
 
       {/* Buttons */}
       <div className="hero-action">
+
+        <AnchorLink className="hero-projects" href="#work">
+          View Projects
+          <span aria-hidden="true">↗</span>
+        </AnchorLink>
 
         <AnchorLink
           className="hero-connect"
           offset="50"
           href="#contact"
         >
-          Connect With Me
+          Contact Me
           <span>↗</span>
         </AnchorLink>
 
         <a
           className="hero-resume"
           href="/resume.pdf"
-          target="_blank"
-          rel="noreferrer"
+          download="Nayab_Mubashar_Full_Stack_Developer_Resume.pdf"
         >
           My Resume
           <span>↓</span>
@@ -58,30 +61,7 @@ const Hero = () => {
 
       </div>
 
-      {/* Tech Stack */}
-      <div className="hero-tech">
-
-  <div className="tech-item">
-    <FaReact className="tech-icon react-icon" />
-    <span>React</span>
-  </div>
-
-  <div className="tech-item">
-    <SiNextdotjs className="tech-icon next-icon" />
-    <span>Next.js</span>
-  </div>
-
-  <div className="tech-item">
-    <SiTypescript className="tech-icon typescript-icon" />
-    <span>TypeScript</span>
-  </div>
-
-  <div className="tech-item">
-    <SiTailwindcss className="tech-icon tailwind-icon" />
-    <span>Tailwind CSS</span>
-  </div>
-
-</div>
+   
 
       {/* Decorative Code Card */}
       <div className="code-card">
@@ -107,11 +87,11 @@ const Hero = () => {
           </p>
 
           <p className="indent">
-            role: <span className="yellow">'Frontend Developer'</span>,
+            role: <span className="yellow">'Full Stack Developer'</span>,
           </p>
 
           <p className="indent">
-            passion: <span className="yellow">'UI/UX'</span>,
+            passion: <span className="yellow">'Full Stack Apps'</span>,
           </p>
 
           <p>

@@ -1,5 +1,6 @@
 {
   "name": "portfolio-react",
+  "description": "Nayab Mubashar's portfolio as a Full Stack Developer building modern, scalable web applications.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

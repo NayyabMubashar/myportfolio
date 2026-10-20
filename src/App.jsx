@@ -4,6 +4,7 @@ import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
 import Service from './Components/Services/Service'
 import Mywork from './Components/MyWork/Mywork'
+import Learning from './Components/Learning/Learning'
 
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
@@ -16,6 +17,7 @@ const App = () => {
       <About/>
       <Service/>
       <Mywork/>
+      <Learning/>
       <Contact/>
       <Footer/>
     </div>

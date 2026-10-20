@@ -1,0 +1,45 @@
+.learning-section { width: 100%; max-width: calc(var(--content-width) + 2 * var(--section-gutter)); margin: 0 auto; padding: var(--section-space) var(--section-gutter); scroll-margin-top: 88px; }
+.learning-heading { margin-bottom: clamp(42px, 5vw, 66px); text-align: center; }
+.learning-heading > span { color: var(--accent-green); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; letter-spacing: .2em; }
+.learning-heading h1 { margin: 10px 0 0; font-size: clamp(40px, 5vw, 62px); line-height: 1.1; letter-spacing: -.045em; }
+.learning-heading h1 strong { background: linear-gradient(100deg, #a49aff, #67e3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.learning-line { width: 70px; height: 4px; margin: 20px auto 0; border-radius: 20px; background: linear-gradient(90deg,
+            #3725da,
+            #1adf73); }
+.learning-timeline { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 34px 72px; margin: 0; padding: 16px 0; list-style: none; }
+.learning-timeline::before { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; content: ''; background: linear-gradient(180deg, #55d99b, #8172ff); transform: translateX(-50%); }
+.learning-item { position: relative; min-width: 0; }
+.learning-item:nth-child(even) { grid-column: 2; }
+.learning-item:nth-child(odd) { grid-column: 1; }
+.learning-dot { position: absolute; z-index: 1; top: 45px; left: calc(100% + 35px); width: 14px; height: 14px; border: 3px solid #55d99b; border-radius: 50%; background: #101321; box-shadow: 0 0 16px rgba(85,217,155,.6); }
+.learning-item:nth-child(even) .learning-dot { left: auto; right: calc(100% + 35px); }
+.learning-purple .learning-dot { border-color: #a49aff; box-shadow: 0 0 16px rgba(129,114,255,.55); }
+.learning-blue .learning-dot { border-color: #69b7ff; box-shadow: 0 0 16px rgba(64,160,255,.5); }
+.learning-orange .learning-dot { border-color: #ffb15c; box-shadow: 0 0 16px rgba(255,157,62,.5); }
+.learning-dot-latest { animation: latestPulse 1.8s ease-out infinite; }
+.learning-card { min-height: 222px; padding: clamp(22px, 3vw, 30px); border: 1px solid rgba(85,217,155,.26); border-radius: 22px; background: rgba(20,24,39,.72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: 0 18px 42px rgba(0,0,0,.2), 0 0 24px rgba(85,217,155,.04); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.learning-card:hover { transform: translateY(-6px); border-color: rgba(85,217,155,.58); box-shadow: 0 22px 48px rgba(0,0,0,.28), 0 0 26px rgba(85,217,155,.13); }
+.learning-purple .learning-card { border-color: rgba(164,154,255,.28); }
+.learning-purple .learning-card:hover { border-color: rgba(164,154,255,.62); box-shadow: 0 22px 48px rgba(0,0,0,.28), 0 0 26px rgba(129,114,255,.16); }
+.learning-blue .learning-card { border-color: rgba(105,183,255,.28); }
+.learning-blue .learning-card:hover { border-color: rgba(105,183,255,.62); box-shadow: 0 22px 48px rgba(0,0,0,.28), 0 0 26px rgba(64,160,255,.14); }
+.learning-orange .learning-card { border-color: rgba(255,177,92,.28); }
+.learning-orange .learning-card:hover { border-color: rgba(255,177,92,.62); box-shadow: 0 22px 48px rgba(0,0,0,.28), 0 0 26px rgba(255,157,62,.14); }
+.learning-card-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
+.learning-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 15px; color: #07120e; background: linear-gradient(135deg, #55d99b, #a2f2cb); box-shadow: 0 8px 22px rgba(85,217,155,.17); font-size: 21px; }
+.learning-purple .learning-icon { color: white; background: linear-gradient(135deg, #6759ec, #a49aff); }
+.learning-blue .learning-icon { color: #061321; background: linear-gradient(135deg, #69b7ff, #a6d8ff); }
+.learning-orange .learning-icon { color: #211306; background: linear-gradient(135deg, #ffb15c, #ffd49e); }
+.learning-latest { padding: 5px 10px; border: 1px solid rgba(85,217,155,.4); border-radius: 999px; color: #a5f0ca; background: rgba(85,217,155,.1); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+.learning-card h2 { margin: 0 0 9px; font-size: clamp(19px, 2vw, 23px); line-height: 1.35; }
+.learning-issuer { margin: 0 0 16px; color: #8be8bd; font-size: 16px; font-weight: 600; }
+.learning-purple .learning-issuer { color: #b5adff; }
+.learning-blue .learning-issuer { color: #8ccaff; }
+.learning-orange .learning-issuer { color: #ffc17d; }
+.learning-date { display: inline-block; padding: 5px 10px; border: 1px solid rgba(190,197,227,.17); border-radius: 999px; color: #d1d5e2; background: rgba(255,255,255,.04); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+.learning-timeline.is-observing .learning-item { opacity: 0; transform: translateX(-24px); transition: opacity .55s ease, transform .55s ease; }
+.learning-timeline.is-observing .learning-item:nth-child(even) { transform: translateX(24px); }
+.learning-timeline.is-observing .learning-item.is-visible { opacity: 1; transform: translateX(0); }
+@keyframes latestPulse { 0% { box-shadow: 0 0 0 0 rgba(85,217,155,.65); } 70% { box-shadow: 0 0 0 10px rgba(85,217,155,0); } 100% { box-shadow: 0 0 0 0 rgba(85,217,155,0); } }
+@media (max-width: 767px) { .learning-section { padding-top: 76px; padding-bottom: 76px; } .learning-heading { margin-bottom: 38px; } .learning-heading h1 { font-size: clamp(36px, 9vw, 48px); } .learning-timeline { grid-template-columns: 1fr; gap: 20px; padding: 6px 0 6px 28px; } .learning-timeline::before { left: 7px; transform: none; } .learning-item, .learning-item:nth-child(even), .learning-item:nth-child(odd) { grid-column: 1; } .learning-dot, .learning-item:nth-child(even) .learning-dot { top: 34px; left: -27px; right: auto; } .learning-card { min-height: 0; } }
+@media (prefers-reduced-motion: reduce) { .learning-dot-latest { animation: none; } .learning-card, .learning-timeline.is-observing .learning-item { transition: none; } .learning-timeline.is-observing .learning-item, .learning-timeline.is-observing .learning-item:nth-child(even) { opacity: 1; transform: none; } }

@@ -165,9 +165,22 @@
 .open-icon,
 .close-icon {
     padding: 0;
+    margin: 0;
     border: 0;
-    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent !important;
+    box-shadow: none !important;
     font: inherit;
+    line-height: 1;
+    color: white;
+}
+
+.open-icon svg,
+.close-icon svg {
+    display: block;
+    width: 1em;
+    height: 1em;
 }
 
 /* ================= ANIMATIONS ================= */
@@ -233,13 +246,12 @@
     /* Hamburger */
 
     .open-icon {
-        display: block;
-
-        color: white;
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
         font-size: 26px;
-
         cursor: pointer;
-
         transition: transform 0.3s ease;
     }
 
@@ -257,6 +269,9 @@
 
         width: 300px;
         height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        visibility: hidden;
 
         display: flex;
         flex-direction: column;
@@ -266,7 +281,7 @@
 
         gap: 15px;
 
-        padding: 70px 30px;
+        padding: 88px 30px 40px;
 
         background: rgba(40, 39, 114, 0.96);
 
@@ -279,7 +294,12 @@
         transition: right 0.5s cubic-bezier(0.77,
                 0,
                 0.175,
-                1);
+                1), visibility 0.5s;
+    }
+
+    .nav-menu-open {
+        right: 0;
+        visibility: visible;
     }
 
     .nav-menu .anchor-link {
@@ -301,6 +321,9 @@
         right: 25px;
 
         color: white;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
 
         font-size: 27px;
 
